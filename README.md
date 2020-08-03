@@ -19,7 +19,7 @@ The model must first **generalize well** for both seen and unseen future time-se
 It is impossible to profit at every trade. Traders objective is to accumulate more wins than losses (net positive) over any time period.<br>
 <br>
 One of the most popular method is to set TP and SL with ratio > 1. Of course the **caveat is that when SL is closer to the entry price, the probabilty of price reaching the the SL level is higher than reaching the TP level**.
-![](./Images/equity_curve_rrr3.png)
+![](./images/equity_curve_rrr3.png)
 
 # Target Users
 ### Why Retail investors?
@@ -35,7 +35,7 @@ One of the most popular method is to set TP and SL with ratio > 1. Of course the
     - Volatility: Average True Range (ATR), Bollinger Bands (BB)
 
 # Methodology
-![](./Images/methodology.png)
+![](./images/methodology.png)
 
 # Directory Structure
 ```
