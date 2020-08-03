@@ -1,7 +1,7 @@
 # Problem Statement
-According to the 2019 Triennial Central Bank Survey of FX and OTC derivatives markets, the **foreign exchange or forex market** is the largest financial market in the world with a daily volume of **$6.6 trillion**. This is even larger than the entire world's stock markets put together (approximately $84 billion for equities worldwide).
+According to the 2019 Triennial Central Bank Survey of FX and OTC derivatives markets, the **foreign exchange or forex market** is the largest financial market in the world with a daily volume of **$6.6 trillion**. This is larger than the entire world's stock markets put together (approximately $84 billion for equities worldwide).
 
-Within this huge amount of **intraday transactions**. 70% are made by **institutional** investors with the remaning 30% made by private **retail** traders.
+Within this huge amount of **intraday transactions**, approximately 70% are made by **institutional** investors while the remaning 30% made by private **retail** traders.
 
 In this project, we will attempt to create a **predictive model** for **Intraday Retail Traders**. The model will use **historical Price and technical indicators data** to predict **probability of price increase or decrease within the next defined time period (24hrs, 7 days etc)**. 
 
@@ -19,6 +19,7 @@ The model must first **generalize well** for both seen and unseen future time-se
 It is impossible to profit at every trade. Traders objective is to accumulate more wins than losses (net positive) over any time period.<br>
 <br>
 One of the most popular method is to set TP and SL with ratio > 1. Of course the **caveat is that when SL is closer to the entry price, the probabilty of price reaching the the SL level is higher than reaching the TP level**.
+<br>
 ![](./images/equity_curve_rrr3.png)
 
 # Target Users
@@ -41,13 +42,21 @@ One of the most popular method is to set TP and SL with ratio > 1. Of course the
 ```
 capstone
 |__ codes
-|   |__ 1_Forex_Basics: Basic information, Risk-Reward ratio & win rates
-|   |__ 2_Data_Cleaning_EDA
-|   |__ 2_Modelling
+|   |__ 1.0_Forex_Basics.ipynb: Basic information, Risk-Reward ratio & win rates
+|   |__ 2.0_Data_Cleaning_EDA.ipynb: Data import, cleaning, EDA, re-sampling
+|   |__ 3.0_ARIMA_Modelling.ipynb: ARIMA time-series model for DI & H1 timeframe
+|   |__ 4.0_Target_define_D1.ipynb: Multi-Class Definition for DI timeframe
+|   |__ 4.1_Target_define_D1.ipynb: Multi-Class Definition for HI timeframe
 |__ datasets
 |   |__ vegan.csv
 |__ images
+|   |__ equity_curve_rrr3.png
+|   |__ eurusd_pip.jpg
+|   |__ metatrader4_stop_loss_take_profit__1.jpg
 |   |__ methodology.png
+|   |__ OHLC.png
+|   |__ Positive-RRR.jpg
+|   |__ RRR_winrate.png
 |__ Presentation.pdf
 |__ README.md
 ```
@@ -57,6 +66,15 @@ capstone
 ### Data Dictionary
 |Feature|Type|Dataset|Description|
 |---|---|---|---|
+
+# Models Metric Summary
+- D1 Timeframe
+|Models|ARIMA|Log Regression|Random Forest|
+|---|---|---|---|
+|Modelling Time|43s|---|---|
+|Long Trade Precision|NA|---|---|
+|Short Trade Precision|NA|---|---|
+|Overall Precision|NA|---|---|
 
 
 # External Research
