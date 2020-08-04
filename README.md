@@ -20,6 +20,7 @@ It is impossible to profit at every trade. Traders objective is to accumulate mo
 <br>
 One of the most popular method is to set TP and SL with ratio > 1. Of course the **caveat is that when SL is closer to the entry price, the probabilty of price reaching the the SL level is higher than reaching the TP level**.
 <br>
+<br>
 ![](./images/equity_curve_rrr3.png)
 
 # Target Users
@@ -83,23 +84,52 @@ capstone
 - df_m15.csv: resampled 15min OHLC data
 - df_m30.csv: resampled 30min OHLC data
 
-### Data Dictionary
+## Data Dictionary
 |Feature|Type|Dataset|Description|
 |---|---|---|---|
+
+# Multi-Class Definition
+- Set Take Profit (TP) at 1 sigma of look ahead prices (140 pips for D1, 55 pips for H1)
+- Set Stop Loss at (SL) 0.33 * (1 sigma), **Reward-Risk Ratio of 3**
+- Using D1 time frame as example
+    - For every look ahead day, if price did not cross -0.33 * 140 and crosses +140 TP >> Label 1, Profitable Long/Buy Trade
+    - For every look ahead day, if price did not cross +0.33 * 140 and crosses -140 TP >> Label 2, Profitable Short/Sell Trade
+
+# Feature Engineering
+- Close Price Shifts
+    -Price movements can be very correlated to their previous period close. We create new columns for shift 1,2,3,5,8,13,21,34,55,89. The relative price distance between current close and shifted closed will also be added.
+    - Relative distances between each shifted prices will also be introduced into the modelling
+<br>
+- Simple Moving Averages
+    - A simple moving average (SMA) calculates the average of a selected range of prices, usually closing prices, by the number of periods in that range.
+    - The SMA is a technical indicator that can aid in determining if an asset price will continue or reverse a bull or bear trend.
+    - The relative distances of the current close price to the SMA can also help predict price movement
+    - We create new columns for SMA with periods 2,3,5,8,13,21,34,55,89. 
+    - The relative distances between current close price and SMAs will also be added
+    - Relative distances between each SMAs will also be introduced into the modelling
+<br>
+- Relative Strength Index (RSI)
+    - The relative strength index (RSI) is a popular momentum oscillator developed in 1978.
+    - The RSI provides technical traders signals about bullish and bearish price momentum, and it is often plotted beneath the graph of an asset's price.
+    - An asset is usually considered overbought when the RSI is above 70% and oversold when it is below 30%.
+    - We create new columns for RSI(14)
+    - formula for RSI: https://en.wikipedia.org/wiki/Relative_strength_index
+    - RSI(14) is a rather noisy signal line.
+    - We will introduce shifts and simple moving averages to this indicator.
+    - Similarly, relative distances between the shifts/MA and current RSI will be added
+    - Relative distances between the shifts/MAs will also be added
+
 
 # Models Metric Summary
 - D1 Timeframe
 
-|Models|ARIMA|Log Regression|Random Forest|
-|---|---|---|---|
-|Modelling Time|43s|---|---|
-|Long Trade Precision|NA|---|---|
-|Short Trade Precision|NA|---|---|
-|Overall Precision|NA|---|---|
+|Models|ARIMA|Log Regression|Random Forest|XGBoost|FNN|RNN|
+|---|---|---|---|---|---|---|
+|Modelling Time|43s|---|---|---|---|---|
+|Long Trade Precision|NA|---|---|---|---|---|
+|Short Trade Precision|NA|---|---|---|---|---|
+|Overall Precision|NA|---|---|---|---|---|
 
-
-# External Research
-- TBD
 
 ### Type 1, 2 error implications
 - TBD
