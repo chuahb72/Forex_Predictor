@@ -13,7 +13,7 @@ The model must first **generalize well** for both seen and unseen future time-se
 - One should only trade what one is ready to lose.
 - Past results will not guarantee future gains/losses
 - The developer will not be responsible for any losses incurred by any users
-- Any trading advice given during the course of development is just for illustrations only.
+- Any trading advice given during the course of development is just for education and illustrations only.
 
 # Forex Basics: Reward-Risk Ratio
 It is impossible to profit at every trade. Traders objective is to accumulate more wins than losses (net positive) over any time period.<br>
@@ -44,11 +44,22 @@ capstone
 |__ codes
 |   |__ 1.0_Forex_Basics.ipynb: Basic information, Risk-Reward ratio & win rates
 |   |__ 2.0_Data_Cleaning_EDA.ipynb: Data import, cleaning, EDA, re-sampling
-|   |__ 3.0_ARIMA_Modelling.ipynb: ARIMA time-series model for DI & H1 timeframe
-|   |__ 4.0_Target_define_D1.ipynb: Multi-Class Definition for DI timeframe
-|   |__ 4.1_Target_define_D1.ipynb: Multi-Class Definition for HI timeframe
+|   |__ 3.0_ARIMA_Modelling.ipynb: ARIMA time-series model for D1 & H1 timeframe
+|   |__ 4.0_Target_define_D1.ipynb: Multi-Class Definition for D1 timeframe
+|   |__ 4.1_Target_define_H1.ipynb: Multi-Class Definition for H1 timeframe
+|   |__ 5.0_Feature_Engineering_D1.ipynb: Multi-Class Definition for D1 timeframe
+|   |__ 5.1_Feature_Engineering_H1.ipynb: Multi-Class Definition for H1 timeframe
 |__ datasets
-|   |__ vegan.csv
+|   |__ DAT_ASCII_EURUSD_M1_2003~2019.csv
+|   |__ df_d1.csv
+|   |__ df_d1_feature.csv
+|   |__ df_d1_merge.csv
+|   |__ df_h1.csv
+|   |__ df_h1_feature.csv
+|   |__ df_h1_merge.csv
+|   |__ df_h4.csv
+|   |__ df_m15.csv
+|   |__ df_m30.csv
 |__ images
 |   |__ equity_curve_rrr3.png
 |   |__ eurusd_pip.jpg
@@ -61,7 +72,16 @@ capstone
 |__ README.md
 ```
 # Data
-- TBD
+- DAT_ASCII_EURUSD_M1_2003~2019.csv: raw 1 minute OHLC data from 2003 to 2019
+- df_d1.csv: resampled 24hr OHLC data
+- df_d1_feature.csv: 24hr OHLC data + feature engineering
+- df_d1_merge.csv: 24hr OHLC data + multi-class labels
+- df_h1.csv: resampled 1hr OHLC data
+- df_h1_feature.csv: 1hr OHLC data + feature engineering
+- df_h1_merge.csv: 1hr OHLC data + multi-class labels
+- df_h4.csv: resampled 4hr OHLC data
+- df_m15.csv: resampled 15min OHLC data
+- df_m30.csv: resampled 30min OHLC data
 
 ### Data Dictionary
 |Feature|Type|Dataset|Description|
@@ -69,6 +89,7 @@ capstone
 
 # Models Metric Summary
 - D1 Timeframe
+
 |Models|ARIMA|Log Regression|Random Forest|
 |---|---|---|---|
 |Modelling Time|43s|---|---|
