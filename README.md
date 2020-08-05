@@ -99,7 +99,7 @@ capstone
 - Close Price Shifts
     -Price movements can be very correlated to their previous period close. We create new columns for shift 1,2,3,5,8,13,21,34,55,89. The relative price distance between current close and shifted closed will also be added.
     - Relative distances between each shifted prices will also be introduced into the modelling
-<br>
+    
 - Simple Moving Averages
     - A simple moving average (SMA) calculates the average of a selected range of prices, usually closing prices, by the number of periods in that range.
     - The SMA is a technical indicator that can aid in determining if an asset price will continue or reverse a bull or bear trend.
@@ -107,7 +107,7 @@ capstone
     - We create new columns for SMA with periods 2,3,5,8,13,21,34,55,89. 
     - The relative distances between current close price and SMAs will also be added
     - Relative distances between each SMAs will also be introduced into the modelling
-<br>
+    
 - Relative Strength Index (RSI)
     - The relative strength index (RSI) is a popular momentum oscillator developed in 1978.
     - The RSI provides technical traders signals about bullish and bearish price momentum, and it is often plotted beneath the graph of an asset's price.
