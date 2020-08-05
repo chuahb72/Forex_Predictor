@@ -50,6 +50,7 @@ capstone
 |   |__ 4.1_Target_define_H1.ipynb: Multi-Class Definition for H1 timeframe
 |   |__ 5.0_Feature_Engineering_D1.ipynb: Multi-Class Definition for D1 timeframe
 |   |__ 5.1_Feature_Engineering_H1.ipynb: Multi-Class Definition for H1 timeframe
+|   |__ 6.0_Modelling_d1.ipynb: Logistic Regression, Random Forrest, Extremely Randomized Forrest, XBG, FFNN for D1 timeframe
 |__ datasets
 |   |__ DAT_ASCII_EURUSD_M1_2003~2019.csv
 |   |__ df_d1.csv
@@ -125,10 +126,9 @@ capstone
 
 |Models|ARIMA|Log Regression|Random Forest|XGBoost|FNN|RNN|
 |---|---|---|---|---|---|---|
-|Modelling Time|43s|---|---|---|---|---|
-|Long Trade Precision|NA|---|---|---|---|---|
-|Short Trade Precision|NA|---|---|---|---|---|
-|Overall Precision|NA|---|---|---|---|---|
+|Long Trade Precision|NG|0.262|0.260|0.336|0.262|0.273|
+|Short Trade Precision|NG|0.250|NG|0.544|NG|0.300|
+|Overall Precision|NG|0.262|0.260|0.378|0.262|0.276|
 
 
 ### Type 1, 2 error implications
