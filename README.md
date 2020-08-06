@@ -72,6 +72,7 @@ capstone
 |   |__ OHLC.png
 |   |__ Positive-RRR.jpg
 |   |__ RRR_winrate.png
+|   |__ metrics.png
 |__ Presentation.pdf
 |__ README.md
 ```
@@ -124,18 +125,27 @@ capstone
     - Relative distances between the shifts/MAs will also be added
 
 
-# Models Metric Summary
-- D1 Timeframe
+# Modelling
+- Below are the list of models that were evaaluated
+    - Logistic Regression
+    - Random Forrest
+    - Extremely Randomized Trees
+    - XGBoost
+    - Feed Forward Neural Networks (FNN)
+    - Reccurent Neural Networks (RNN)
+- Confusion matrix for all the model were studied together.
+- With the exception of Random Forrest, FNN and RNN all other models tend to predict zero or very minimal class 0.
+- Random Forrest modelling time was too long to be practical and therefore not considered
+- Since this is a time-series problem, between FNN and RNN, it makes better sense to use RNN for further optimization.
 
-|Models|ARIMA|Log Regression|Random Forest|XGBoost|FNN|RNN|
-|---|---|---|---|---|---|---|
-|Long Trade Precision|NG|0.262|0.260|0.336|0.262|0.273|
-|Short Trade Precision|NG|0.250|NG|0.544|NG|0.300|
-|Overall Precision|NG|0.262|0.260|0.378|0.262|0.276|
+### Choice of Metrics
+- Model will open a LONG trade when it predicts 1
+- Model will open a SHORT trade when it predicts 2
+- Model will not open any trade when it predicts 0
+- Traders are concern with their WINNING Rates
+- Therefore PRECISION of OPENED trades will be the important metrics
+![](./images/metrics.png)
 
-
-### Type 1, 2 error implications
-- TBD
 
 # Conclusion & Recommendation
 - TBD
