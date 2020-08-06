@@ -73,6 +73,7 @@ capstone
 |   |__ Positive-RRR.jpg
 |   |__ RRR_winrate.png
 |   |__ metrics.png
+|   |__ Precision_Eqty_curve.png
 |__ Presentation.pdf
 |__ README.md
 ```
@@ -143,9 +144,27 @@ capstone
 - Model will open a SHORT trade when it predicts 2
 - Model will not open any trade when it predicts 0
 - Traders are concern with their WINNING Rates
-- Therefore PRECISION of OPENED trades will be the important metrics
+- Therefore PRECISION of OPENED trades will be the important criteria
 ![](./images/metrics.png)
 
 
-# Conclusion & Recommendation
-- TBD
+# Conclusion
+- Using RNN, we are able to achieve Opened Trades Precision between 28% to 50%
+- Combined with Reward to Risk ratio of 2 or 3, it may be possible to use machine learning to achieve profitable intraday trading.
+![](./images/Precision_Eqty_curve.png)
+
+
+# Recommendation
+- Proof of Concept
+    - Integrate python and MQL4 (Metatrader4 trading platform)
+    - Forward testing to confirm whether profitability can be achieve with Live and Future price movements
+    
+- Further Improvement
+    - In this project, the most granular data studied was the 1 minute OHLC
+    - It is possible for price to fluctuate even within 1 minute
+    - Explore modelling with with price "tick' data (every price movement of at least 0.00001)
+    - Introduce other Indicator features:
+        - Bollinger Bands
+        - Moving Average Convergence Divergence (MACD)
+        - Stochastic Oscillators
+        - and many more
