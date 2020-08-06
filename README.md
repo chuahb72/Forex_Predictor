@@ -51,13 +51,15 @@ capstone
 |   |__ 5.0_Feature_Engineering_D1.ipynb: Multi-Class Definition for D1 timeframe
 |   |__ 5.1_Feature_Engineering_H1.ipynb: Multi-Class Definition for H1 timeframe
 |   |__ 6.0_Modelling_d1.ipynb: Logistic Regression, Random Forrest, Extremely Randomized Forrest, XBG, FFNN for D1 timeframe
+|   |__ 6.1_RNN_D1.ipynb: RNN modelling for D1 timeframe
+|   |__ 6.2_RNN_H1.ipynb: RNN modelling for D1 timeframe
 |__ datasets
 |   |__ DAT_ASCII_EURUSD_M1_2003~2019.csv
 |   |__ df_d1.csv
 |   |__ df_d1_feature.csv
 |   |__ df_d1_merge.csv
 |   |__ df_h1.csv
-|   |__ df_h1_feature.csv
+|   |__ df_h1_feature.csv (not available in github repo due to large file size)
 |   |__ df_h1_merge.csv
 |   |__ df_h4.csv
 |   |__ df_m15.csv
