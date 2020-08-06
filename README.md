@@ -5,7 +5,7 @@ Within this huge amount of **intraday transactions**, approximately 70% are made
 
 In this project, we will attempt to create a **predictive model** for **Intraday Retail Traders**. The model will use **historical Price and technical indicators data** to predict **probability of price increase or decrease within the next defined time period (24hrs, 7 days etc)**. 
 
-The model must first **generalize well** for both seen and unseen future time-series data. Once that is achieved, model should conceptually allow user to **break-even or be profitable**.
+The model must first **generalize well** for both seen and unseen future time-series data. Once that is achieved, model should conceptually allow user to be **profitable**.
 
 # Disclaimer
 - Foreign Exchange (FOREX) is a form of leveraged trading with significant levels of risk.
@@ -92,11 +92,12 @@ capstone
 |---|---|---|---|
 
 # Multi-Class Definition
-- Set Take Profit (TP) at 1 sigma of look ahead prices (140 pips for D1, 55 pips for H1)
-- Set Stop Loss at (SL) 0.33 * (1 sigma), **Reward-Risk Ratio of 3**
+- Set Take Profit (TP) at χ sigma of look ahead prices (140 pips for D1, 55 pips for H1)
+- Set Stop Loss at (SL) 0.33 * (χ sigma), Reward-Risk Ratio of 3
 - Using D1 time frame as example
     - For every look ahead day, if price did not cross -0.33 * 140 and crosses +140 TP >> Label 1, Profitable Long/Buy Trade
     - For every look ahead day, if price did not cross +0.33 * 140 and crosses -140 TP >> Label 2, Profitable Short/Sell Trade
+
 
 # Feature Engineering
 - Close Price Shifts
